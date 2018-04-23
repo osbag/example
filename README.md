@@ -9,6 +9,11 @@ There are 2 REST endpoints
 1. POST /users : To create user 
 2. GET /users: To list all the users
 
+## Requirement
+
+Tested with Java8 and Maven 3
+
+
 ## Goal
 
 1. Implement the saveUser method in UserService to make the POST endpoint work. 
