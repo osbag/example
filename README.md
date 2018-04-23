@@ -11,7 +11,8 @@ There are 2 REST endpoints
 
 ## Requirement
 
-Tested with Java8 and Maven 3
+1. Tested with Java8 and Maven 3
+2. GitHub account. 
 
 
 ## Goal
@@ -23,3 +24,4 @@ Tested with Java8 and Maven 3
 4. Create packages and extra classes as needed. 
 5. Add proper validations.
 6. Write unit tests as required for service methods.
+7. When you are done, please create a pull request in github for review and assessment. 
