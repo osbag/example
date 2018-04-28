@@ -1,29 +1,34 @@
-package de.osbag.example.entity;
+package de.osbag.example.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import de.osbag.example.utils.LocalDateDeserializer;
+import de.osbag.example.utils.LocalDateSerializer;
+
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "users")
-public class User extends AbstractEntity {
+/**
+ * Created by bijan.zohouri on 4/24/2018.
+ * A dto has been created for the sake of in transition operations
+ */
+public class UserRequestDto {
+
 
     private String firstName;
-
     private String lastName;
-
     private Double weightInKg;
-
     private Double heightInCm;
 
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dateOfBirth;
 
-    public User(User newUser) {
-
-    }
-
-    public User() {
-
+    public UserRequestDto(String firstName, String lastName, Double weightInKg, Double heightInCm, LocalDate dateOfBirth) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.heightInCm = heightInCm;
+        this.weightInKg = weightInKg;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -42,14 +47,6 @@ public class User extends AbstractEntity {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
     public Double getWeightInKg() {
         return weightInKg;
     }
@@ -64,6 +61,14 @@ public class User extends AbstractEntity {
 
     public void setHeightInCm(Double heightInCm) {
         this.heightInCm = heightInCm;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
