@@ -23,8 +23,13 @@ There are 2 REST endpoints
 
  bmi = (weight-in-kg) / (height-in-meters) * (height-in-meters)
 
-
 4. Create packages and extra classes as needed. 
+
+[optional]
 5. Add proper validations.
 6. Write unit tests as required for service methods.
-7. When you are done, please create a pull request in github for review and assessment. 
+7. Create a working update endpoint. 
+[optional]
+
+8. When you are done, please create a pull request in github for review and assessment. 
+
