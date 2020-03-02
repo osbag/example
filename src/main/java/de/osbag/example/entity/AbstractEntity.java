@@ -11,6 +11,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import javax.persistence.PreUpdate;
 
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
@@ -36,7 +37,8 @@ public class AbstractEntity implements Serializable {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-
+    
+    @PreUpdate
     public void beforeUpdate() {
 
         this.updatedAt = LocalDateTime.now();
